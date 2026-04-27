@@ -50,11 +50,6 @@ Route::get('tugaspertemuan5linktree', function () {
     return view('tugas5linktree');
 });
 
-Route::get('dashboard', function () {
-    return view('menu');
-});
-
-
 Route::get('dosen', [DosenController::class, 'index']);
 Route::get('biodata', [DosenController::class, 'biodata']);
 
