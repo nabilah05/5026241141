@@ -1,52 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Data Nilai Kuliah</title>
-</head>
-<body>
+@extends('template')
 
-    <h2>Data Nilai Kuliah</h2>
+@section('title', 'Data Nilai Kuliah')
 
-    <a href="/tambah">
-        <button>Tambah Data</button>
-    </a>
+@section('konten')
 
-    <br><br>
+<h2>Data Nilai Kuliah</h2>
 
-    <table border="1" cellpadding="10">
-        <tr>
-            <th>ID</th>
-            <th>NRP</th>
-            <th>Nilai Angka</th>
-            <th>SKS</th>
-            <th>Nilai Huruf</th>
-            <th>Bobot</th>
-        </tr>
+<a href="/tambah" class="btn btn-primary">
+    Tambah Data
+</a>
 
-        @foreach($data as $d)
-        <tr>
-            <td>{{ $d->id }}</td>
-            <td>{{ $d->nrp }}</td>
-            <td>{{ $d->nilaiangka }}</td>
-            <td>{{ $d->sks }}</td>
+<br><br>
 
-            <td>
-                @if($d->nilaiangka <= 40)
-                    D
-                @elseif($d->nilaiangka >= 41 && $d->nilaiangka <= 60)
-                    C
-                @elseif($d->nilaiangka >= 61 && $d->nilaiangka <= 80)
-                    B
-                @else
-                    A
-                @endif
-            </td>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>ID</th>
+        <th>NRP</th>
+        <th>Nilai Angka</th>
+        <th>SKS</th>
+        <th>Nilai Huruf</th>
+        <th>Bobot</th>
+    </tr>
 
-            <td>{{ $d->nilaiangka * $d->sks }}</td>
-        </tr>
-        @endforeach
+    @foreach($data as $d)
+    <tr>
+        <td>{{ $d->id }}</td>
+        <td>{{ $d->nrp }}</td>
+        <td>{{ $d->nilaiangka }}</td>
+        <td>{{ $d->sks }}</td>
 
-    </table>
+        <td>
+            @if($d->nilaiangka <= 40)
+                D
+            @elseif($d->nilaiangka >= 41 && $d->nilaiangka <= 60)
+                C
+            @elseif($d->nilaiangka >= 61 && $d->nilaiangka <= 80)
+                B
+            @else
+                A
+            @endif
+        </td>
 
-</body>
-</html>
+        <td>{{ $d->nilaiangka * $d->sks }}</td>
+    </tr>
+    @endforeach
+
+</table>
+
+@endsection

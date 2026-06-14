@@ -1,46 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tambah Data Nilai Kuliah</title>
-</head>
-<body>
+@extends('template')
 
-    <h2>Tambah Data Nilai Kuliah</h2>
+@section('title', 'Tambah Data Nilai Kuliah')
 
-    <form action="/store" method="POST">
-        @csrf
+@section('konten')
 
-        <table>
-            <tr>
-                <td>NRP</td>
-                <td>
-                    <input type="text" name="nrp" required>
-                </td>
-            </tr>
+<h2>Tambah Data Nilai Kuliah</h2>
 
-            <tr>
-                <td>Nilai Angka</td>
-                <td>
-                    <input type="text" name="nilaiangka" required>
-                </td>
-            </tr>
+<a href="/nilaikuliah" class="btn btn-info">Kembali</a>
 
-            <tr>
-                <td>SKS</td>
-                <td>
-                    <input type="text" name="sks" required>
-                </td>
-            </tr>
+<br><br>
 
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" value="Simpan">
-                </td>
-            </tr>
-        </table>
+<form action="/store" method="POST">
+    @csrf
 
-    </form>
+    <div class="mb-3">
+        <label class="form-label">NRP</label>
+        <input type="text" name="nrp" required class="form-control">
+    </div>
 
-</body>
-</html>
+    <br>
+
+    <div class="mb-3">
+        <label class="form-label">Nilai Angka</label>
+        <input type="text" name="nilaiangka" required class="form-control">
+    </div>
+
+    <br>
+
+    <div class="mb-3">
+        <label class="form-label">SKS</label>
+        <input type="text" name="sks" required class="form-control">
+    </div>
+
+    <br>
+
+    <input type="submit" value="Simpan Data" class="btn btn-success">
+
+</form>
+
+@endsection

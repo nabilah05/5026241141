@@ -29,6 +29,6 @@ class NilaikuliahController extends Controller
             'sks' => $request->sks
         ]);
 
-        return redirect('/');
+        return redirect('/nilaikuliah');
     }
 }

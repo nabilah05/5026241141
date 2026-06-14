@@ -6,6 +6,9 @@ use App\Http\Controllers\PegawaiController ;
 use App\Http\Controllers\BlogController ;
 use App\Http\Controllers\PegawaiDBController ;
 use App\Http\Controllers\NilaikuliahController;
+use App\Http\Controllers\keranjangController;
+use App\Http\Controllers\AgenController;
+use App\Http\Controllers\SiswaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -76,6 +79,25 @@ Route::get('/pegawaihapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawaicari', [PegawaiDBController::class, 'cari']);
 
 //latihan eas
-Route::get('/', [NilaikuliahController::class, 'index']);
+Route::get('/nilaikuliah', [NilaikuliahController::class, 'index']);
 Route::get('/tambah', [NilaikuliahController::class, 'tambah']);
 Route::post('/store', [NilaikuliahController::class, 'store']);
+
+//crud tabel keranjangbelanja
+Route::get('/keranjangbelanja', [keranjangController::class, 'index_keranjang']);
+Route::get('/keranjangbeli/{id}', [keranjangController::class, 'beli']);
+Route::post('/keranjangstore', [keranjangController::class, 'storeKeranjang']);
+Route::get('/keranjangbatal/{id}', [keranjangController::class, 'batal']);
+
+//agen
+Route::get('/agen', [AgenController::class,'index']);
+Route::get('/agen/tambah', [AgenController::class,'tambah']);
+Route::post('/agen/store', [AgenController::class,'store']);
+
+//route CRUD siswa
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
