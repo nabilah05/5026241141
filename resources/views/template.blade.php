@@ -15,14 +15,14 @@
 
     <div class="container">
         <div class="mt-4 p-5 bg-primary text-white rounded">
-            <h3>5026241141 Aisyah Nabilah Putri</h3>
+            <h3>31 nilai_peserta</h3>
             <h6>@yield('title')</h6>
         </div>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/pegawai">Pegawai</a>
+                        <a class="nav-link " href="/pegawai">Pegawai</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/agen">Agen</a>
@@ -37,7 +37,7 @@
                         <a class="nav-link" href="/siswa">Siswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">EAS</a>
+                        <a class="nav-link active" href="/eas">EAS</a>
                     </li>
 
                 </ul>
